@@ -1,10 +1,14 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { ImageResponse } from "./fetchTypes";
 
 const API_KEY = "y7_Bvyt_TQP1bMgl9HJh_HiI9cbo6aT-p5XyD9_6pcE";
 axios.defaults.baseURL =  "https://api.unsplash.com/search/photos";
 
-const fetchImages = async (currentPage, searchQuery) => {
-    const response = await axios.get("", {
+const fetchImages = async (
+    currentPage: number, 
+    searchQuery: string
+) : Promise<ImageResponse> => {
+    const response: AxiosResponse<ImageResponse> = await axios.get("", {
         params: {
             query: searchQuery,
             page: currentPage,
