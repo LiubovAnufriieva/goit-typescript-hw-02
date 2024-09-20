@@ -11,3 +11,7 @@
 .button:hover {
     transform: scale(1.1);
 }
+
+.btn_text:hover {
+    transform: scale(0.8);
+}
