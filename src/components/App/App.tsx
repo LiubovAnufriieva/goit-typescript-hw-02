@@ -10,7 +10,7 @@ import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 
 import css from "./App.module.css";
-import { SelectedImage, ImageResponse, Image, HandleLoadMore, HandleSubmit, HandleModalClick, HandleModalClose, HandleModalOpen } from './App.types'
+import { SelectedImage, ImageResponse, Image, HandleLoadMore, HandleSubmit, HandleModalClose, HandleModalOpen } from './App.types'
 
 const App: React.FC =() => {
 const [images, setImages] = useState< Image[]>([]);
