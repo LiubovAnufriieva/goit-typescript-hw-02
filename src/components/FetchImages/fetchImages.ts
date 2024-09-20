@@ -13,7 +13,7 @@ interface Params {
             client_id: string,
 }
 
-async function fetchImages<T>(searchQuery: string, page: number) : Promise<T> {
+export default async function fetchImages<T>(searchQuery: string, page: number) : Promise<T> {
     const response: AxiosResponse<ImageResponse> = await axios.get("", {
         params: <Params> {
             query: searchQuery,
@@ -26,4 +26,3 @@ async function fetchImages<T>(searchQuery: string, page: number) : Promise<T> {
     return response.data as T;
   };
 
-export default fetchImages;

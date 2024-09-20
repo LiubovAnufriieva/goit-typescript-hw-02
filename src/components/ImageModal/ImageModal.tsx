@@ -1,6 +1,7 @@
 import css from "./ImageModal.module.css";
 import Modal from "react-modal";
 import { AiOutlineLike } from "react-icons/ai";
+import { ImageModalProps } from "./ImageModal.types";
 
 Modal.setAppElement("#root");
 const customStyles = {
@@ -17,7 +18,7 @@ const customStyles = {
   },
 };
 
-const ImageModal = ({
+const ImageModal: React.FC<ImageModalProps> = ({
   isOpen,
   onRequestClose,
   imageUrl,
@@ -32,6 +33,7 @@ const ImageModal = ({
       onRequestClose={onRequestClose}
       style={customStyles}
       contentLabel="Image Modal"
+      shouldCloseOnEsc={true}
     >
       <div className={css.container}>
         <img className={css.image} src={imageUrl} alt={altDescription} />
